@@ -8,16 +8,8 @@ p {
 }
 
 span {
-    font-size: 22px;
+    font-size: 21px;
     font-weight: bold;
-}
-
-img {
-    float: left;
-    width: 394px;
-    height: 400px;
-    margin-bottom: 20px;
-    border: solid 1px;
 }
 
 #container {
