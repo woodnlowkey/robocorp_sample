@@ -13,78 +13,80 @@
         <iframe id="legend" src="legend.html" frameborder="0"></iframe>
         <div id="description">
             <p>
-                <span>1. API request - client의 요청에 따라 또는 periodically</span><br>
-                <br>
-                <br>
-                <br>
+                <span>1. API request - Client의 요청에 따라 또는 Periodically</span><br>
+                <blockquote>
+                    - 검색조건에 따라 일정 기간마다 주기적으로 동작하도록 Scheduling 가능<br>
+                </blockquote>
                 <br>
                 <br>
                 <span>2. Process 실행</span><br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span>3. 이전 Process가 생성한 report 등 Initialize the operating environment</span><br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span>4. target 브랜드 검색 (Naver Blog, Instagram hashtag 등)</span><br>
                 <blockquote>
-                - 검색조건 : 최근 1주, 최신순<br>
+                    - 실행 시 Monitoring 또는 Client의 요청에 따라 검색 브랜드를 변경 가능
+                </blockquote>
+                <br>
+                <br>
+                <span>3. 이전 Process가 생성한 Report 등 Initialize the operating environment</span><br>
+                <blockquote>
+                    - 실행 가능한 환경 : Local, Cloud, Docker Container
+                </blockquote>
+                <br>
+                <br>
+                <span>4. target 브랜드 검색(Naver Blog)</span><br>
+                <blockquote>
+                    - 네이버 블로그 검색에 해당 브랜드(ex:곰표)를 검색
                 </blockquote>
                 <br>
                 <br>
                 <br>
-                <span>5. 브랜드 관련 검색 keyword list 스크랩</span><br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span>6. keyword로 검색 (모든 페이지, 포스트, 연관 검색어)</span><br>
+                <span>5. 브랜드 관련 검색 Keyword List 스크랩</span><br>
                 <blockquote>
-                - 검색조건 : 최근 1주, 정확도순<br>
+                    - 연관 검색어(곰표 오징어튀김, 곰표 맥주...) 목록 수집<br>
+                    - Customer의 유효한 트래픽에 연관된 알고리즘
                 </blockquote>
                 <br>
                 <br>
                 <br>
-                <span>7. 결과물 엑셀 저장 (title, contents, link)</span><br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span>8. 데이터 텍스트 Tokenization by Mecab(Morphology)</span>
+                <span>6. 해당 Keyword로 검색(모든 페이지, 포스트)</span><br>
                 <blockquote>
-                - Stopwords Cleaning and Normalization<br>
-                - 관련 keyword report 작성을 위한 Word2Vac(Continuous Bag of Words) 모델 생성
+                    - 검색조건을 정확도순으로 인덱스별 가중치(감성분석의 종합 판단 지표에 영향)<br>
+                </blockquote>
+                <br>
+                <br>
+                <br>
+                <span>7. 결과물 엑셀 저장 (Title, Contents, Link)</span><br>
+                <blockquote>
+                    - 각 Raw Data에 ID를 부여하고 시트에 입력<br>
+                </blockquote>
+                <br>
+                <br>
+                <br>
+                <span>8. 데이터 Contents Tokenization by Mecab(Morphology)</span>
+                <blockquote>
+                    - Stopwords Cleaning and Normalization<br>
+                    - 관련 keyword Report 작성을 위한 Word2Vac(Continuous Bag of Words) 모델 생성
                 </blockquote>
                 <br>
                 <br>
                 <span>9. 소비자 반응 데이터 생성을 위한 긍정 또는 부정 Binary Classification(RNN)</span><br>
+                <blockquote>
+                    - Pre Trained Model Fine Tuning<br>
+                    - 분류 결과에 따라 Positive 또는 Negative의 Keyword Frequency 추출<br>
+                    - Word2Vac 모델 활용 Related Keywords Report 생성
+                </blockquote>
                 <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <span>10. 각 반응에 대한 sheet 생성 및 관련 contents, link 분류</span><br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <span>10. 각 반응에 대한 Sheet 생성 및 관련 Contents, Link 분류</span><br>
+                <blockquote>
+                    - 분류 정확도에 따라 Positive 또는 Negative 시트에 Strong Descending 정렬<br>
+                    - Report 작성
+                </blockquote>
                 <br>
                 <span>11. Time series analysis 지표, keyword analysis graph 작성</span><br>
+                <blockquote>
+                    - Result값 Visualization<br>
+                </blockquote>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
-                <span>12. 보고서 mail 발송</span><br>
+                <span>12. 보고서 Mail 발송(SMTP)</span><br>
                 <br>
                 <br>
                 <br>
